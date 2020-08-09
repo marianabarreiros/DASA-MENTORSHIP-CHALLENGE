@@ -1,6 +1,7 @@
 package br.com.dasa.laboratorymanage.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Laboratory {
@@ -12,6 +13,8 @@ public class Laboratory {
     private Address address;
     @Enumerated(EnumType.STRING)
     private LabStatus labStatus = LabStatus.ATIVO;
+    @ManyToMany
+    private List<Exam> exams;
 
     public String getId() {
         return Id;

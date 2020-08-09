@@ -13,6 +13,8 @@ public class Exam {
     private ExamType examType;
     @Enumerated(EnumType.STRING)
     private ExamStatus examStatus = ExamStatus.ATIVO;
+    @OneToMany
+    private Laboratory laboratory;
 
     public String getId() {
         return Id;
